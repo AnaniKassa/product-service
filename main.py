@@ -21,5 +21,5 @@ def get_products():
 
 # Azure will inject PORT, so must listen on 0.0.0.0:<PORT>
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))  # Azure defaults to PORT env
+    port = int(os.environ.get("PORT", 3030))  # Azure defaults to PORT env
     app.run(host="0.0.0.0", port=port)
