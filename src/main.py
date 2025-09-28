@@ -1,15 +1,12 @@
 import os
 from flask import Flask, jsonify
 from flask_cors import CORS
-from dotenv import load_dotenv
 
-# Load environment variables from .env (like dotenv in Rust)
-load_dotenv()
-
+# Flask app
 app = Flask(__name__)
 
-# Enable CORS (allow all origins, GET only)
-CORS(app, resources={r"/products": {"origins": "*"}}, methods=["GET"])
+# Enable CORS for /products (allow all origins)
+CORS(app, resources={r"/products": {"origins": "*"}})
 
 # Example products data
 products_data = [
@@ -22,7 +19,7 @@ products_data = [
 def get_products():
     return jsonify(products_data)
 
+# Azure will inject PORT, so must listen on 0.0.0.0:<PORT>
 if __name__ == "__main__":
-    # Get port from env or default to 3030
-    port = int(os.getenv("PORT", 3030))
+    port = int(os.environ.get("PORT", 8000))  # Azure defaults to PORT env
     app.run(host="0.0.0.0", port=port)
