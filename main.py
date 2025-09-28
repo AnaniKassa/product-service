@@ -12,7 +12,8 @@ CORS(app, resources={r"/products": {"origins": "*"}})
 products_data = [
     {"id": 1, "name": "Laptop", "price": 1200},
     {"id": 2, "name": "Phone", "price": 800},
-    {"id": 3, "name": "Tablet", "price": 500}
+    {"id": 3, "name": "Tablet", "price": 500},
+    {"id": 4, "name": "SmartGlasses", "price": 700}
 ]
 
 @app.route("/products", methods=["GET"])
