@@ -13,7 +13,8 @@ products_data = [
     {"id": 1, "name": "Laptop", "price": 1200},
     {"id": 2, "name": "Phone", "price": 800},
     {"id": 3, "name": "Tablet", "price": 500},
-    {"id": 4, "name": "SmartGlasses", "price": 700}
+    {"id": 4, "name": "SmartGlasses", "price": 700},
+    {"id": 5, "name": "SmartWatch", "price": 900}
 ]
 
 @app.route("/products", methods=["GET"])
